@@ -3,12 +3,15 @@ import { createStore } from "redux";
 const initialState = { amount: 1 };
 
 // Action Name Constants ->
+const init = 'init';
 const Increment = 'increment';
 const Decrement = 'decrement';
 const IncrementByAmount = 'incrementByAmount';
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
+        case init:
+            return { ...state, amount: action.payload }
         case Increment:
             return { ...state, amount: state.amount + 1 };
         case Decrement:
@@ -29,6 +32,10 @@ store.subscribe(() => {
 });
 
 // Action Creators ->
+function actionCreator(value) {
+    return { type: init, payload: value }
+}
+
 function increment() {
     return { type: Increment }
 }
