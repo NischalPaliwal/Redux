@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { increment, decrement, incrementByAmount } from "../store/index";
+import { increment, decrement, incrementByValue } from "../slices/accountSlice";
 
 const Amount = () => {
   const [incValue, setIncValue] = React.useState(0);
@@ -13,7 +13,7 @@ const Amount = () => {
       <div><button onClick={() => dispatch(increment())}>Increment+</button></div>
       <div><button onClick={() => dispatch(decrement())}>Decrement-</button></div>
       <div><input type='number' onChange={(e) => setIncValue(e.target.value)} placeholder='Enter the increment value here' /></div>
-      <div><button onClick={() => dispatch(incrementByAmount(Number.parseInt(incValue)))}>Increment by value {incValue}</button></div>
+      <div><button onClick={() => dispatch(incrementByValue(Number.parseInt(incValue)))}>Increment by value {incValue}</button></div>
     </div>
   )
 }
