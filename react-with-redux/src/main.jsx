@@ -13,7 +13,7 @@ const store = configureStore({
     account: accountReducer,
     bonus: bonusReducer
   }
-})
+});
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
