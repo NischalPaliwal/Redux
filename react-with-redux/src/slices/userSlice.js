@@ -1,11 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const userApi = createApi({
-    reducerPath: 'userApi',
+    reducerPath: 'user',
     baseQuery: fetchBaseQuery({ baseUrl: '' }),
     endpoints: (build) => ({
         getUserAccount: build.query({
-            query: (id) => `user/${id}`
+            query: (id) => `user/${id}`,
+            providesTags: ['user']
         }),
         createUserAccount: build.mutation({
             query: (body) => ({
@@ -13,12 +14,14 @@ export const userApi = createApi({
                 method: 'POST',
                 body: body
             }),
+            invalidatesTags: ['user']
         }),
         deleteUserAccount: build.mutation({
             query: (id) => ({
                 url: `user/${id}`,
                 method: 'DELETE'
             }),
+            invalidatesTags: ['user']
         }),
         updateUserAccount: build.mutation({
             query: ({ id, body }) => ({
@@ -26,6 +29,7 @@ export const userApi = createApi({
                 method: 'PATCH',
                 body: body
             }),
+            invalidatesTags: ['user']
         }),
     }),
 });
