@@ -44,7 +44,7 @@ const ProductList = () => {
       id: 3,
       name: "Laptop",
       price: 1299.99,
-      image: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/macbook-air-og-202503?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1739216814915",
+      image: "https://inspireonline.in/cdn/shop/files/MacBook_Air_13_in_M3_Starlight_PDP_Image_Position_1__en-IN_59125549-e4d7-4286-8b8f-ecf6a8dbe738.jpg?v=1730311146",
       description: "Powerful laptop for work and gaming",
     },
     {
